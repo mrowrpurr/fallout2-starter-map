@@ -77,7 +77,9 @@
 //procedure destroy_p_proc begin
 //end
 
-//procedure talk_p_proc;
+variable has_looked_at;
+
+procedure talk_p_proc;
 procedure dialogue_start;
 procedure dialogue_end;
 procedure dialogue_exit_attempt_response;
@@ -92,7 +94,7 @@ procedure use_skill_on_p_proc;
 procedure dialogue_end begin
     // Nothing, just ends.
 end
-//
+
 procedure dialogue_exit_attempt_response begin
     Reply(102);
     NOption(103, dialogue_end, 1);
@@ -103,16 +105,19 @@ procedure dialogue_start begin
     NOption(101, dialogue_exit_attempt_response, 1);
 end
 
-//procedure talk_p_proc begin
-//   start_dialogue(self_obj, neutral_fidget);
-//   gsay_start;
-//   call dialogue_start;
-//   gsay_end;
-//   end_dialogue;
-//end
+procedure talk_p_proc begin
+    if has_looked_at then begin
+        start_dialogue(self_obj, neutral_fidget);
+        gsay_start;
+        call dialogue_start;
+        gsay_end;
+        end_dialogue;
+    end
+end
 
 procedure look_at_p_proc begin
 	script_overrides;
+	has_looked_at := true;
 	display_msg("LOOK AT");
 end
 
