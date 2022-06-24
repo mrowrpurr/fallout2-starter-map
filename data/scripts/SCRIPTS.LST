@@ -1301,4 +1301,4 @@ CIMine.int      ; Mines in Navarro                              # local_vars=6
 niBisHLk.int    ; New Reno Bishop Hard Locker                   # local_vars=1
 niBisHDr.int    ; New Reno Bishop Hard Locked Door              # local_vars=6
 ntRicRom.int    ; New Reno Richard Wright Room Spacial          # local_vars=1
-MPSTALK.int     ;                                               # local_vars=0
+MPSTALK.int     ; Some description                              # local_vars=0

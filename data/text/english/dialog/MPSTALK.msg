@@ -1,4 +1,4 @@
-{100}{}{Hello.}
-{101}{}{Goodbye.}
-{102}{}{Another 1.}
-{103}{}{Another 2.}
+{100}{}{Hello there!}
+{101}{}{S'up, peace. I'm out.}
+{102}{}{No, please don't leave...}
+{103}{}{Sorry, but I'm busy. Got things to do!}

@@ -77,13 +77,17 @@
 //procedure destroy_p_proc begin
 //end
 
-procedure talk_p_proc;
+//procedure talk_p_proc;
 procedure dialogue_start;
 procedure dialogue_end;
 procedure dialogue_exit_attempt_response;
 
 procedure description_p_proc;
 procedure look_at_p_proc;
+
+procedure use_p_proc;
+procedure use_obj_on_p_proc;
+procedure use_skill_on_p_proc;
 
 procedure dialogue_end begin
     // Nothing, just ends.
@@ -98,14 +102,14 @@ procedure dialogue_start begin
     Reply(100);
     NOption(101, dialogue_exit_attempt_response, 1);
 end
-//
-procedure talk_p_proc begin
-   start_dialogue(self_obj, neutral_fidget);
-   gsay_start;
-   call dialogue_start;
-   gsay_end;
-   end_dialogue;
-end
+
+//procedure talk_p_proc begin
+//   start_dialogue(self_obj, neutral_fidget);
+//   gsay_start;
+//   call dialogue_start;
+//   gsay_end;
+//   end_dialogue;
+//end
 
 procedure look_at_p_proc begin
 	script_overrides;
@@ -115,4 +119,27 @@ end
 procedure description_p_proc begin
 	script_overrides;
 	display_msg("DESCRIPTION");
+
+    start_dialogue(self_obj, neutral_fidget);
+    gsay_start;
+    call dialogue_start;
+    gsay_end;
+    end_dialogue;
 end
+
+
+procedure use_p_proc begin
+    script_overrides;
+    display_msg("USE");
+end
+
+procedure use_obj_on_p_proc begin
+    script_overrides;
+    display_msg("USE OBJ ON");
+end
+
+procedure use_skill_on_p_proc begin
+    script_overrides;
+    display_msg("USE SKILL ON");
+end
+
